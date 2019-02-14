@@ -1,0 +1,41 @@
+
+	{%extends "layout.html"%}
+	{%block content%}
+		<div>
+	
+					<table class="table table-hover">
+						<thead class="thead-dark">
+							<tr>
+								<th class="column1">Name</th>
+								<th class="column2">Phone no.</th>
+								<th class="column3">Salary</th>
+								<th class="column3">Address</th>
+								<th class="column3">Start Date</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+								{%for items in data %}
+								<tr>
+
+									<td class="column1">{{ items[0] }}</td>
+									<td class="column2">{{ items[2] }}</td>
+									<td class="column3">{{ items[5] }}</td>
+									<td class="column3">{{ items[4] }}</td>
+									<td class="column3">{{ items[3] }}</td>
+								</tr>
+								{% endfor %}
+						</tbody>
+					</table>
+				<div class="container" style="padding-top: 50px" >
+
+					<button type="button" onclick="window.location.href='insert_emp'" class="btn btn-secondary"  >INSERT EMPLOYEE</button>
+				</div>
+			</div>
+				
+		{%endblock%}
+
+	
+
+
+

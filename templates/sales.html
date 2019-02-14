@@ -1,0 +1,48 @@
+
+	{%extends "layout.html"%}
+	{%block content%}
+
+	<script type="text/javascript">
+  document.getElementById('date').value = Date();
+</script>
+
+		<div>
+	
+					<table class="table table-hover">
+						<thead class="thead-dark">
+							<tr>
+								<th class="column1">Order ID</th>
+								<th class="column2">Customer ID</th>
+								<th class="column3">Item ID</th>
+								<th class="column3">Quantity</th>
+								<th class="column3">Price</th>
+								<th class="column3">Date</th>
+								<th class="column3">Emp ID</th>
+
+								
+							</tr>
+						</thead>
+						<tbody>
+								{%for items in data %}
+								<tr>
+
+									<td class="column1">{{ items[0] }}</td>
+									<td class="column2">{{ items[1] }}</td>
+									<td class="column3">{{ items[2] }}</td>
+									<td class="column4">{{ items[3] }}</td>
+									<td class="column5">{{ items[4] }}</td>
+									<td class="column6">{{ items[5] }}</td>
+									<td class="column7">{{ items[6] }}</td>
+								</tr>
+								{% endfor %}
+						</tbody>
+					</table>
+				
+			</div>
+				
+		{%endblock%}
+
+	
+
+
+

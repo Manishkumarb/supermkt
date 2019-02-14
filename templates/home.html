@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+
+        <style>
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 250px;
+    position: absolute;
+    z-index: 1;
+    top: 56px;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 16px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    z-index: 1;
+    margin-left: 50px;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.main {
+    margin-left: 20px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+</style>
+     
+      
+
+</head>
+
+<body>
+
+    <header><nav class="navbar navbar-dark bg-dark navbar-expand-lg navbar-fixed-top">
+            <a class="navbar-brand" href="#"> SuperMarket Manager  </a> <img src="/static/images/store.svg" width="30" height="30" alt="">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="emp">Employees</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="customers">Customers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="sales">Sales</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Products
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="Books">Books</a>
+                    <a class="dropdown-item" href="Beauty_Products">Beauty Products</a>
+                    <a class="dropdown-item" href="Grocery">Grocery items</a>
+                    <a class="dropdown-item" href="Household_Essentials">Household Essentials</a>
+                    <a class="dropdown-item" href="Snacks">Snacks</a>
+                    <a class="dropdown-item" href="Sports_items">Sports Items</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="insert_item">Insert Item</a>
+                     <a class="dropdown-item" href="insert_emp">Insert Employee</a>
+                  </div>
+                </li>
+                
+              </ul>
+           
+             
+ <div class="btn-group" role="group" aria-label="Basic example">
+                             
+                    <button type="button" onclick="window.location.href='/'" class="btn btn-secondary">Log Out</button>
+                          </div>
+            </div>
+          </nav></header>
+
+
+          <div class="sidenav">
+  <a href="about">About</a>
+  <a href="statistics">Statistics</a>
+  <a href="services">Services</a>
+  <a href="contact">Contact</a>
+
+
+</div>
+  <div class="main">
+
+              <div class="row" style="padding-left: 260px">
+              
+              {% for item in data%}
+            <div class="card" style="width: 17rem; margin-right: 20px; margin-top: 10px">
+              <div class="card_image" >
+              <img class="card-img-top" src="{{item[2]}}" alt="Card image cap" height="225" width="200" >
+              </div>
+              <div class="card-body">
+                
+                  <button type="button" onclick="window.location.href='{{item[1]}}'" class="btn btn-secondary" style="display: block; margin: auto"  >{{item[1]}}</button>
+              </div>
+           
+            </div>
+            {%endfor%}
+
+          </div>
+       </div>
+          </div>  
+</body>
+
+   
+</body>
+</html>

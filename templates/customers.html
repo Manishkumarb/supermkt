@@ -1,0 +1,26 @@
+{%extends "layout.html"%}
+	{%block content%}
+	
+					<table class="table table-hover">
+						<thead class="thead-dark">
+							<tr>
+								<th class="column1">Name</th>
+								<th class="column2">Phone no</th>
+								<th class="column3">Address</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+								{%for items in data %}
+								<tr>
+
+									<td class="column1">{{ items[1] }}</td>
+									<td class="column2">{{ items[2] }}</td>
+									<td class="column3">{{ items[3] }}</td>
+								</tr>
+								{% endfor %}
+						</tbody>
+					</table>
+				
+				
+		{%endblock%}

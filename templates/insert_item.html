@@ -1,0 +1,48 @@
+{% extends "layout.html"%}
+{%block content%}
+
+  <div style="margin-left: 450px">
+  <font size="6" ><h1>Enter Item Details</h1></font>
+  </div>
+  <div style="padding:50px" >
+    <form method="post">
+
+    <div class="form-group" style="width: 400px">
+  <label for="category">Select Category</label>
+  <select class="form-control"  name="cat_id">
+    <option value="" disabled selected>Select Category</option>
+    <option value="1">Books</option>
+    <option value="2">Grocery</option>
+    <option value="3">Beauty Products</option>
+    <option value="4">Snacks</option>
+    <option value="5">Household Essentials</option>
+    <option value="6">Sports Items</option>
+  </select>
+</div>
+
+
+  <div class="form-group">
+    <label >Name</label>
+    <input type="text" class="form-control" id="InputName"  placeholder="Enter name" name="name" style="width: 400px">
+  </div>
+
+  <div class="form-group">
+    <label >Price</label>
+    <input type="text"  class="form-control" id="InputPrice" placeholder="Enter Price"
+    name="price" style="width: 400px">
+  </div>
+
+  <div class="form-group">
+    <label >Quantity</label>
+    <input type="number"  class="form-control" id="InputQuantity" placeholder="Enter Quantity" name="quantity"  style="width: 400px">
+  </div>
+
+  <div class="form-group">
+    <label >URL</label>
+    <input type="text"  class="form-control" id="InputURL" placeholder="Enter URL"  name="url" style="width: 400px">
+  </div>
+  
+  <button type="submit" class="btn btn-secondary">Save</button>
+</form>
+</div>
+{%endblock%}

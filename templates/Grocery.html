@@ -1,0 +1,33 @@
+{%extends "layout.html"%}
+  {%block content%}
+  <style>
+      body{
+      background-color: #26415b;
+    }
+    
+  </style>
+
+   <div class="black">
+              <div class="row" style="margin-left: 10px; margin-top: 20px" >
+                
+              {% for item in data%}
+            <div class="card" style="width: 18rem; margin-left: 10px; height: 450px ">
+              <div class="card_image" >
+              <img class="card-img-top" src="{{item[4]}}" alt="Card image cap" height="225" width="200" >
+              </div>
+              <div class="card-body">
+                <p class="card-text"><b>Product Name: </b> {{item[1]}}</p>
+                <p class="card-text"><b>Price: </b>{{item[3]}}</p>
+                <p class="card-text"><b>Quantity:</b>{{item[5]}}</p>
+              </div>
+            </div>
+            {%endfor%}
+          </div>
+
+</div>
+
+<div class="container" style="padding-top: 30px" >
+
+          <button type="button" onclick="window.location.href='insert_item'" class="btn btn-secondary"  >INSERT ITEM</button>
+        </div>
+    {%endblock%}
